@@ -1,0 +1,29 @@
+!---->{EXCLAMATION MARK}
+@---->{AT}
+#---->{NUMBER SIGN}
+$---->{DOLLAR}
+%---->{UNKNOWN KEYCODE: 0X0}
+^---->{CIRCUMFLEX}
+&---->{AMPERSAND}
+*---->{ASTERISK}
+(---->{LEFT PARENTHESIS}
+)---->{RIGHT PARENTHESIS}
+_---->{UNDERSCORE}
++---->{PLUS}
+{---->{LEFT BRACE}
+}---->{RIGHT BRACE}
+:---->{COLON}
+"---->{DOUBLE QUOTE}
+|---->{UNKNOWN KEYCODE: 0X0}
+<---->{LESS}
+>---->{GREATER}
+?---->{UNKNOWN KEYCODE: 0X0}
+----->{minus} 
+=---->{equals}
+[---->{open bracket}
+]---->{close bracket}
+;---->{semicolon}
+\---->{back slash}
+/---->{slash}
+`---->{back quote}
+~---->{UNKNOWN KEYCODE: 0X0}

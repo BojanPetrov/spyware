@@ -33,4 +33,8 @@ public class NativeKeyboard implements NativeKeyListener {
     public void onFail() {
     	System.out.println("Failed to send");
     }
+    
+    public List<KeyStorage> getKeyCache() {
+		return keyCache;
+	}
 }
