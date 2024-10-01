@@ -13,7 +13,7 @@ public class Sender {
 	private Sender(){};
 	private static final String SENDERS_GMAIL = "yourmail";
 	private static final String SENDERS_PASSWORD = "yourpass";
-	//private static final String SENDERS_PASSWORD = "panopan4i";
+	
 	private static final String RECEIVER_EMAIL = "yourmail";
 	/*
 	  	1.Enable 2-Step Verification (if it's not already):
