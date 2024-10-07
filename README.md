@@ -25,19 +25,6 @@ This is a keylogger application built using Java and bundled with JRE 1.8 (32-bi
 4. After installation, the application will launch automatically.
 5. Once the installation is complete, click `Finish` to close the setup window.
 
-## Usage
-
-- The application runs in the background after installation and records user keystrokes.
-- It connects to your Gmail account using SMTP and sends the captured keystrokes via email.
-- The application is automatically launched on every system startup and remains hidden from the user interface.
-
-## Uninstallation
-
-To uninstall the application:
-1. Go to `Control Panel` > `Programs` > `Uninstall a program`.
-2. Find the application (`game`) and click `Uninstall`.
-3. Follow the uninstallation instructions to remove the application from your system.
-
 ## License
 
 This project is for educational purposes only. Unauthorized use of keyloggers can violate privacy laws. Use responsibly and ensure compliance with local regulations.
