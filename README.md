@@ -8,6 +8,7 @@ This is a keylogger application built using Java and bundled with JRE 1.8 (32-bi
 - **Automatic Startup**: Once installed, the application is set to start automatically after the user logs in.
 - **Stealth Mode**: The application is hidden from the Start menu and runs in the background without being visible to the user.
 - **Bundled JRE**: The installer includes a 32-bit version of JRE 1.8, so no separate Java installation is required for running the application.
+- **Automatic Start**: It launches after installation without asking the user.
 
 ## How It Works
 
