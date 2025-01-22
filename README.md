@@ -1,6 +1,6 @@
 # Keylogger Application
 
-This is a keylogger application built using Java and bundled with JRE 1.8 (32-bit) to ensure compatibility across different versions of Windows (both 32-bit and 64-bit). The app was converted into an executable file using Launch4j and packaged with an installer using Inno Setup.
+This is a keylogger application built using Java which is bundled with JRE 1.8 (32-bit) to ensure compatibility across different versions of Windows (both 32-bit and 64-bit). The app was converted into an executable file using Launch4j and packaged with an installer using Inno Setup.
 
 ## Features
 
